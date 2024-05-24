@@ -1,0 +1,98 @@
+.btn {
+	font-size: 1.5rem;
+	display: inline-block;
+	width: max-content;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	transition: all 0.2s;
+	margin: 0 auto;
+
+	// CALL-TO-ACTION-BUTTON
+	&__cta {
+		font-weight: 300;
+		color: #fff;
+		text-transform: uppercase;
+		background-image: linear-gradient(
+			to bottom,
+			var(--primary-color-light),
+			var(--primary-color-dark)
+		);
+		border-radius: 100px;
+		overflow: hidden;
+		position: relative;
+		animation: pulsate 1s infinite;
+
+		&:hover {
+			background-image: linear-gradient(
+				to top,
+				var(--primary-color-light),
+				var(--primary-color-dark)
+			);
+			transform: translateY(-2px);
+			box-shadow: 0 0.7rem 3rem rgba(0, 0, 0, 0.6) !important;
+			animation: pulsate 1s infinite 5s !important;
+		}
+
+		&:active {
+			transform: translateY(0) !important;
+			box-shadow: 0 0.1rem 3rem rgba(0, 0, 0, 0.3) !important;
+		}
+
+		&:focus {
+			animation: none !important;
+		}
+
+		& > * {
+			display: inline-block;
+			height: 100%;
+			width: 100%;
+			transition: all 0.2s;
+		}
+
+		&__visible {
+			padding: 2rem 7.5rem;
+		}
+
+		&__invisible {
+			padding: 2rem 0;
+			position: absolute;
+			left: 0;
+			top: -100%;
+		}
+
+		&:hover &__visible {
+			transform: translateY(100%);
+		}
+
+		&:hover &__invisible {
+			top: 0;
+		}
+	}
+}
+
+///////////////////////////////////
+// BUTTON INLINE
+.btn-inline {
+	color: var(--primary-color);
+	border-bottom: 1px solid currentColor;
+	padding-bottom: 2px;
+	background-color: transparent;
+
+	& span {
+		margin-left: 3px;
+		transition: margin-left 0.2s;
+	}
+
+	&:hover {
+		color: var(--grey-color-dark-1);
+
+		& span {
+			margin-left: 8px;
+		}
+	}
+
+	&:focus {
+		animation: pulsate 1s infinite;
+	}
+}

@@ -1,0 +1,26 @@
+html {
+	font-size: 62.5%; /* 1rem = 10px, 10/16 = 62.5% */
+
+	@include respond(tab-land) {
+		font-size: 56.25%; // 9px
+	}
+
+	@include respond(phone) {
+		font-size: 50%; // 8px
+	}
+
+	@include respond(small-phone) {
+		font-size: 43.75%; /* 1rem = 7px, 7/16 = 43.75% */
+	}
+}
+
+body {
+	font-family: "Open Sans", sans-serif;
+	font-weight: 400;
+	line-height: 1.6;
+	font-size: 1.6rem;
+
+	@include respond(phone) {
+		font-size: 1.8rem;
+	}
+}
